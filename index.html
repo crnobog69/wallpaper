@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wallpaper Theme Converter</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/convert.js"defer></script>
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <header>
+    <h1 style="margin-right:auto">Wallpaper Theme Converter</h1>
+    <a style="margin-left:auto"
+    href=""></a>
+  </header>
+
+  <body>
+    <div id="loading-screen">
+      <p>Loading...</p>
+
+    </div>
+    <hr class="main" />
+    <br/>
+    <div id="main-container">
+      <div id="drop-zone" ondragover="handleImage();">
+        <label for="image-loader">Drag/Drop, Paste (Ctrl+V), or</label>
+        <input type="file" id="image-loader" name="image-loader"  accept=".jpg, .jpeg, .png, .webp" />
+      </div>
+      <br/>
+      <canvas id="image-canvas"></canvas>
+
+      <div style="display:flex; justify-content: center;">
+        <button class="important-button"  id ="download-button" type="button" onclick="downloadImage()">↓ Download ↓</button>
+        <button class="important-button" id ="reset-button" type="button" onclick="reset()">Reset Image</button>
+      </div>
+
+      <div style="text-align: center">
+        <h3 id = "loading">Select a theme</h3>
+        <div id="palette" style="height:1em;">
+        </div>
+        <hr class="body"/>
+
+        <button class = "theme-button" type="button" onclick="changeTheme('Gruvbox')">Gruvbox</button>
+        <button class = "theme-button" type="button" onclick="changeTheme('Nord')">Nord</button>
+        <button class = "theme-button" type="button" onclick="changeTheme('Solarized')">Solarized</button>
+        <button class = "theme-button" type="button" onclick="changeTheme('Catppuccin')">Catppuccin</button>
+        <button class = "theme-button" type="button" onclick="changeTheme('Dracula')">Dracula</button>
+        <button class = "theme-button" type="button" onclick="changeTheme('Everforest')">Everforest</button>
+        <button class = "theme-button" type="button" onclick="changeTheme('TokyoNight')">Tokyo Night</button>
+      <br/>
+      <hr class="body"/>
+
+      <button class = "theme-button" id ="custom" type="button" onclick="openCustomMenu()"> Custom Theme </button>
+     
+      <div id="custom-menu">
+        <button  type="button" onclick="addColour()">+</button>
+        <button  type="button" onclick="removeColour()">-</button>
+
+        <div id="colours" style="padding: 0.5em; display:block;">
+        </div>
+        <br/>
+        <button type="button" onclick="closeCustomMenu()">Done</button>
+      </div>
+
+      <hr class="body"/>
+        <button class="important-button" id="convert" type="button" onclick="initialize()">Convert</button>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p>Crnobog 2024</p>
+  </footer>
+</html>
